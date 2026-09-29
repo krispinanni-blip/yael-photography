@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גלריה | יעל אילוז</title>
+<meta name="description" content="הגלריה המלאה של יעל אילוז - צלמת אמנית.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Assistant:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><span>יעל אילוז</span></div>
+
+<header class="site-header scrolled" id="siteHeader">
+  <nav class="nav">
+    <a href="index.html" class="logo">יעל אילוז</a>
+    <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">בית</a></li>
+      <li><a href="gallery.html">גלריה</a></li>
+      <li><a href="index.html#about">אודות</a></li>
+      <li><a href="index.html#contact">צור קשר</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="section-heading">
+    <p class="eyebrow">כל העבודות</p>
+    <h2>גלריה</h2>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">הכל</button>
+    <button class="filter-btn" data-filter="portrait">פורטרטים</button>
+    <button class="filter-btn" data-filter="nature">טבע</button>
+    <button class="filter-btn" data-filter="events">אירועים</button>
+    <button class="filter-btn" data-filter="bw">שחור-לבן</button>
+  </div>
+</section>
+
+<section class="gallery-section full-gallery">
+  <div class="masonry">
+    <figure class="masonry-item tall" data-category="portrait"><img src="https://picsum.photos/seed/g1/800/1100" alt="פורטרט 1" loading="lazy"><figcaption>פורטרט // 2025</figcaption></figure>
+    <figure class="masonry-item" data-category="nature"><img src="https://picsum.photos/seed/g2/800/600" alt="טבע 1" loading="lazy"><figcaption>טבע // 2025</figcaption></figure>
+    <figure class="masonry-item" data-category="bw"><img src="https://picsum.photos/seed/g3/800/900" alt="שחור לבן 1" loading="lazy"><figcaption>שחור-לבן // 2024</figcaption></figure>
+    <figure class="masonry-item tall" data-category="events"><img src="https://picsum.photos/seed/g4/800/1100" alt="אירוע 1" loading="lazy"><figcaption>אירועים // 2024</figcaption></figure>
+    <figure class="masonry-item" data-category="portrait"><img src="https://picsum.photos/seed/g5/800/700" alt="פורטרט 2" loading="lazy"><figcaption>פורטרט // 2024</figcaption></figure>
+    <figure class="masonry-item" data-category="nature"><img src="https://picsum.photos/seed/g6/800/650" alt="טבע 2" loading="lazy"><figcaption>טבע // 2023</figcaption></figure>
+    <figure class="masonry-item tall" data-category="bw"><img src="https://picsum.photos/seed/g7/800/1050" alt="שחור לבן 2" loading="lazy"><figcaption>שחור-לבן // 2023</figcaption></figure>
+    <figure class="masonry-item" data-category="events"><img src="https://picsum.photos/seed/g8/800/620" alt="אירוע 2" loading="lazy"><figcaption>אירועים // 2023</figcaption></figure>
+    <figure class="masonry-item" data-category="portrait"><img src="https://picsum.photos/seed/g9/800/950" alt="פורטרט 3" loading="lazy"><figcaption>פורטרט // 2023</figcaption></figure>
+    <figure class="masonry-item" data-category="nature"><img src="https://picsum.photos/seed/g10/800/700" alt="טבע 3" loading="lazy"><figcaption>טבע // 2022</figcaption></figure>
+    <figure class="masonry-item tall" data-category="portrait"><img src="https://picsum.photos/seed/g11/800/1100" alt="פורטרט 4" loading="lazy"><figcaption>פורטרט // 2022</figcaption></figure>
+    <figure class="masonry-item" data-category="bw"><img src="https://picsum.photos/seed/g12/800/680" alt="שחור לבן 3" loading="lazy"><figcaption>שחור-לבן // 2022</figcaption></figure>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> יעל אילוז — כל הזכויות שמורות</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="סגור">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

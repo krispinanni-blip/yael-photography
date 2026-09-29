@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>יעל אילוז | צלמת אמנית</title>
+<meta name="description" content="יעל אילוז - צלמת אמנית. פורטרטים, טבע ורגעים בלתי נשכחים דרך העדשה.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Assistant:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><span>יעל אילוז</span></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav">
+    <a href="index.html" class="logo">יעל אילוז</a>
+    <button class="nav-toggle" id="navToggle" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">בית</a></li>
+      <li><a href="#gallery">גלריה</a></li>
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+      <li><a href="gallery.html">כל העבודות</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-image" style="background-image:url('https://picsum.photos/seed/yael-hero/1600/2000')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">צילום אמנותי</p>
+    <h1>יעל אילוז</h1>
+    <p class="hero-sub">רגעים אמיתיים, מסופרים דרך אור וצל</p>
+    <a href="#gallery" class="btn">לצפייה בעבודות</a>
+  </div>
+  <div class="scroll-hint"><span></span></div>
+</section>
+
+<section class="intro-strip">
+  <p>* תוכן זה הוא placeholder ראשוני — יוחלף בתמונות ובטקסטים האמיתיים של יעל *</p>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="section-heading">
+    <p class="eyebrow">עבודות נבחרות</p>
+    <h2>גלריה</h2>
+  </div>
+  <div class="masonry" id="masonryGrid">
+    <figure class="masonry-item tall"><img src="https://picsum.photos/seed/yael1/800/1100" alt="עבודה נבחרת 1" loading="lazy"><figcaption>פורטרט // 2025</figcaption></figure>
+    <figure class="masonry-item"><img src="https://picsum.photos/seed/yael2/800/600" alt="עבודה נבחרת 2" loading="lazy"><figcaption>טבע // 2025</figcaption></figure>
+    <figure class="masonry-item"><img src="https://picsum.photos/seed/yael3/800/900" alt="עבודה נבחרת 3" loading="lazy"><figcaption>שחור-לבן // 2024</figcaption></figure>
+    <figure class="masonry-item tall"><img src="https://picsum.photos/seed/yael4/800/1100" alt="עבודה נבחרת 4" loading="lazy"><figcaption>אירועים // 2024</figcaption></figure>
+    <figure class="masonry-item"><img src="https://picsum.photos/seed/yael5/800/700" alt="עבודה נבחרת 5" loading="lazy"><figcaption>רחוב // 2024</figcaption></figure>
+    <figure class="masonry-item"><img src="https://picsum.photos/seed/yael6/800/650" alt="עבודה נבחרת 6" loading="lazy"><figcaption>פורטרט // 2023</figcaption></figure>
+  </div>
+  <div class="gallery-cta">
+    <a href="gallery.html" class="btn btn-outline">לכל הגלריה</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-image" style="background-image:url('https://picsum.photos/seed/yael-portrait/900/1100')"></div>
+  <div class="about-text">
+    <p class="eyebrow">אודות</p>
+    <h2>קצת עליי</h2>
+    <p>יעל אילוז היא צלמת אמנית [placeholder — כאן ייכנס הביו האמיתי של יעל: רקע, סגנון צילומי, השראה, ותק, ותחומי התמחות]. כל תמונה מספרת סיפור של רגע אמיתי, אור טבעי ורגש.</p>
+    <p>[placeholder — פרטים נוספים: פרסים, תערוכות, לקוחות, פרסומים]</p>
+    <a href="#contact" class="btn btn-outline">בואו נדבר</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-heading light">
+    <p class="eyebrow">צור קשר</p>
+    <h2>בואו ניצור משהו יחד</h2>
+  </div>
+  <div class="contact-grid">
+    <a class="contact-item" href="mailto:info@example.com">
+      <span class="contact-label">אימייל</span>
+      <span class="contact-value">info@example.com</span>
+    </a>
+    <a class="contact-item" href="tel:+972000000000">
+      <span class="contact-label">טלפון</span>
+      <span class="contact-value">050-000-0000</span>
+    </a>
+    <a class="contact-item" href="#" target="_blank" rel="noopener">
+      <span class="contact-label">אינסטגרם</span>
+      <span class="contact-value">@yael.iluz.photography</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> יעל אילוז — כל הזכויות שמורות</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="סגור">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
