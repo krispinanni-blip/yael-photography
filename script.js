@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroSlides.length > 1) {
     let currentSlide = 0;
     setInterval(() => {
+      let nextSlide = Math.floor(Math.random() * heroSlides.length);
+      if (nextSlide === currentSlide) nextSlide = (nextSlide + 1) % heroSlides.length;
       heroSlides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % heroSlides.length;
-      heroSlides[currentSlide].classList.add('active');
-    }, 5000);
+      heroSlides[nextSlide].classList.add('active');
+      currentSlide = nextSlide;
+    }, 4500);
   }
 
   const header = document.getElementById('siteHeader');
