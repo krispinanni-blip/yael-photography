@@ -1,18 +1,14 @@
 <svg viewBox="0 0 1600 2000" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g3" x1="0%" y1="10%" x2="60%" y2="100%">
-      <stop offset="0%" stop-color="#6e7d4f"/>
-      <stop offset="50%" stop-color="#3b4527"/>
-      <stop offset="100%" stop-color="#161a0f"/>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9d98a"/>
+      <stop offset="35%" stop-color="#7c9448"/>
+      <stop offset="70%" stop-color="#3c4a22"/>
+      <stop offset="100%" stop-color="#12160a"/>
     </linearGradient>
-    <radialGradient id="v3" cx="50%" cy="35%" r="75%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
-    </radialGradient>
-    <filter id="blur3"><feGaussianBlur stdDeviation="95"/></filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="55"/></filter>
   </defs>
   <rect width="1600" height="2000" fill="url(#g3)"/>
-  <circle cx="1200" cy="500" r="360" fill="#b7c98a" opacity="0.4" filter="url(#blur3)"/>
-  <circle cx="350" cy="1450" r="440" fill="#1f2415" opacity="0.6" filter="url(#blur3)"/>
-  <rect width="1600" height="2000" fill="url(#v3)"/>
+  <circle cx="1220" cy="460" r="360" fill="#eef7cf" opacity="0.5" filter="url(#blur3)"/>
+  <circle cx="330" cy="1580" r="440" fill="#1b220f" opacity="0.65" filter="url(#blur3)"/>
 </svg>
