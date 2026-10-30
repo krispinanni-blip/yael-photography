@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.masonry-item img').forEach(img => {
     img.setAttribute('tabindex', '0');
     img.setAttribute('role', 'button');
-    img.setAttribute('aria-label', img.alt ? `הגדלת תמונה: ${img.alt}` : 'הגדלת תמונה');
+    img.setAttribute('aria-label', img.alt ? `View larger image: ${img.alt}` : 'View larger image');
     img.addEventListener('click', () => openLightbox(img));
     img.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
   });
 
-  const revealEls = document.querySelectorAll('.section-heading, .masonry-item, .about-text, .about-image, .contact-item');
+  const revealEls = document.querySelectorAll('.section-heading, .masonry-item, .about-text, .about-image, .contact-item, .blog-card');
   revealEls.forEach(el => el.classList.add('reveal'));
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
