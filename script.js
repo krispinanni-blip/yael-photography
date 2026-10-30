@@ -35,19 +35,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
+  let lastFocused = null;
+  const openLightbox = img => {
+    lastFocused = document.activeElement;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+    lightboxClose.focus();
+  };
   document.querySelectorAll('.masonry-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', img.alt ? `הגדלת תמונה: ${img.alt}` : 'הגדלת תמונה');
+    img.addEventListener('click', () => openLightbox(img));
+    img.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
     });
   });
-  const closeLightbox = () => lightbox.classList.remove('open');
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    if (lastFocused) lastFocused.focus();
+  };
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
   if (lightbox) {
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+  });
 
   const revealEls = document.querySelectorAll('.section-heading, .masonry-item, .about-text, .about-image, .contact-item');
   revealEls.forEach(el => el.classList.add('reveal'));
