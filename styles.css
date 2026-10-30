@@ -216,6 +216,21 @@ a { color: inherit; text-decoration: none; }
 .masonry-item:hover figcaption, .masonry-item:focus-within figcaption { opacity: 1; }
 .gallery-cta { text-align: center; margin-top: 3.5rem; }
 
+.video-placeholder-box {
+  height: 320px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem;
+  background: var(--sand);
+  border: 1px dashed var(--muted);
+}
+.video-placeholder-box span {
+  font-family: var(--serif); font-size: 1.3rem; color: var(--black);
+}
+.video-placeholder-box em {
+  font-style: normal; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* Blog */
 .blog-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
