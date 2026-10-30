@@ -339,6 +339,53 @@ a { color: inherit; text-decoration: none; }
   font-size: 2.2rem; cursor: pointer; line-height: 1;
 }
 
+/* Accessibility widget */
+.a11y-widget {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 3000;
+}
+.a11y-toggle {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--black); color: var(--cream);
+  border: 1px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: background var(--transition);
+}
+.a11y-toggle:hover, .a11y-toggle:focus-visible { background: var(--gold); color: var(--black); }
+.a11y-toggle svg { width: 28px; height: 28px; }
+.a11y-panel {
+  position: absolute; bottom: 64px; right: 0;
+  background: var(--cream); color: var(--black);
+  border: 1px solid var(--muted);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  padding: 1rem; width: 230px;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.a11y-panel[hidden] { display: none; }
+.a11y-title {
+  font-family: var(--serif); font-size: 1rem; margin-bottom: 0.3rem;
+}
+.a11y-panel button {
+  text-align: left; font-family: var(--sans); font-size: 0.9rem;
+  padding: 0.6rem 0.7rem; background: var(--sand); border: 1px solid transparent;
+  cursor: pointer; transition: border-color var(--transition);
+}
+.a11y-panel button:hover, .a11y-panel button:focus-visible { border-color: var(--gold); }
+.a11y-panel button[data-a11y="reset"] { color: var(--muted); }
+
+html.a11y-underline a { text-decoration: underline !important; }
+html.a11y-contrast body { background: #000; color: #fff; }
+html.a11y-contrast .about-text p,
+html.a11y-contrast .article-body p,
+html.a11y-contrast .blog-excerpt,
+html.a11y-contrast .contact-value,
+html.a11y-contrast .site-footer { color: #fff; }
+html.a11y-contrast .about-text h2,
+html.a11y-contrast .article-body h3,
+html.a11y-contrast .page-hero h2,
+html.a11y-contrast .page-hero .eyebrow { color: #fff; }
+html.a11y-contrast .page-hero { background: #000; }
+
 /* Reveal on scroll */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }

@@ -89,4 +89,69 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  const a11yToggle = document.getElementById('a11yToggle');
+  const a11yPanel = document.getElementById('a11yPanel');
+  if (a11yToggle && a11yPanel) {
+    const root = document.documentElement;
+    const FONT_STEPS = [100, 112.5, 125, 137.5, 150];
+    let fontIndex = 0;
+
+    const readStored = key => { try { return localStorage.getItem(key); } catch (e) { return null; } };
+    const writeStored = (key, val) => { try { localStorage.setItem(key, val); } catch (e) {} };
+
+    const applyFont = () => { root.style.fontSize = FONT_STEPS[fontIndex] + '%'; };
+
+    const storedFont = parseInt(readStored('a11yFontIndex'), 10);
+    if (!isNaN(storedFont) && storedFont >= 0 && storedFont < FONT_STEPS.length) {
+      fontIndex = storedFont;
+      applyFont();
+    }
+    if (readStored('a11yContrast') === '1') root.classList.add('a11y-contrast');
+    if (readStored('a11yUnderline') === '1') root.classList.add('a11y-underline');
+
+    const closePanel = () => {
+      a11yPanel.hidden = true;
+      a11yToggle.setAttribute('aria-expanded', 'false');
+    };
+    a11yToggle.addEventListener('click', () => {
+      const open = a11yPanel.hidden;
+      a11yPanel.hidden = !open;
+      a11yToggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', e => {
+      if (!a11yPanel.hidden && !a11yPanel.contains(e.target) && !a11yToggle.contains(e.target)) closePanel();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !a11yPanel.hidden) closePanel();
+    });
+
+    a11yPanel.querySelectorAll('button[data-a11y]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.a11y;
+        if (action === 'font-inc') {
+          fontIndex = Math.min(fontIndex + 1, FONT_STEPS.length - 1);
+          applyFont();
+          writeStored('a11yFontIndex', String(fontIndex));
+        } else if (action === 'font-dec') {
+          fontIndex = Math.max(fontIndex - 1, 0);
+          applyFont();
+          writeStored('a11yFontIndex', String(fontIndex));
+        } else if (action === 'contrast') {
+          root.classList.toggle('a11y-contrast');
+          writeStored('a11yContrast', root.classList.contains('a11y-contrast') ? '1' : '0');
+        } else if (action === 'underline') {
+          root.classList.toggle('a11y-underline');
+          writeStored('a11yUnderline', root.classList.contains('a11y-underline') ? '1' : '0');
+        } else if (action === 'reset') {
+          fontIndex = 0;
+          root.style.fontSize = '';
+          root.classList.remove('a11y-contrast', 'a11y-underline');
+          writeStored('a11yFontIndex', '0');
+          writeStored('a11yContrast', '0');
+          writeStored('a11yUnderline', '0');
+        }
+      });
+    });
+  }
 });
