@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
   });
 
-  const revealEls = document.querySelectorAll('.section-heading, .masonry-item, .about-text, .about-image, .contact-item, .blog-card');
+  const revealEls = document.querySelectorAll('.section-heading, .about-text, .about-image, .contact-item, .blog-card');
   revealEls.forEach(el => el.classList.add('reveal'));
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
