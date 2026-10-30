@@ -63,6 +63,20 @@
   <p>© <span id="year"></span> Yael — All rights reserved</p>
 </footer>
 
+<div class="a11y-widget">
+  <button class="a11y-toggle" id="a11yToggle" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="4.5" r="2.2"/><path d="M4 8.2c3.4 1.1 12.6 1.1 16 0l.5 1.9c-2 .6-4.1 1-6.2 1.2l1.9 9.3-2 .4-1.7-8.2h-1l-1.7 8.2-2-.4 1.9-9.3c-2.1-.2-4.2-.6-6.2-1.2z"/></svg>
+  </button>
+  <div class="a11y-panel" id="a11yPanel" hidden>
+    <p class="a11y-title">Accessibility</p>
+    <button type="button" data-a11y="font-inc">A+ &nbsp;Increase text size</button>
+    <button type="button" data-a11y="font-dec">A− &nbsp;Decrease text size</button>
+    <button type="button" data-a11y="contrast">High contrast</button>
+    <button type="button" data-a11y="underline">Underline links</button>
+    <button type="button" data-a11y="reset">Reset</button>
+  </div>
+</div>
+
 <script src="script.js?v=4"></script>
 </body>
 </html>
