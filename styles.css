@@ -318,6 +318,22 @@ a { color: inherit; text-decoration: none; }
 .contact-icon svg { width: 100%; height: 100%; }
 .contact-value { font-family: var(--serif); font-size: 1.15rem; }
 
+.qr-block {
+  margin: 3rem auto 0; max-width: 220px;
+  text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.qr-block img {
+  background: var(--cream); padding: 10px;
+}
+.qr-block p {
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+}
+.qr-block .qr-link {
+  font-family: var(--serif); font-size: 1rem; color: var(--gold);
+  border-bottom: 1px solid transparent; transition: border-color var(--transition);
+}
+.qr-block .qr-link:hover { border-color: var(--gold); }
+
 /* Footer */
 .site-footer {
   background: var(--black); color: var(--muted);
